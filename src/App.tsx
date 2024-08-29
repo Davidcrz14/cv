@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import React from 'react';
 import { FaEnvelope, FaExternalLinkAlt, FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
-import './App.css';
 
 // Asumimos que tienes un componente Navbar
 import Navbar from './components/Navbar';
@@ -247,7 +247,13 @@ function Card({ title, description, github, link, number }: Project) {
     </motion.div>
   )
 }
-function HobbyCard({ title, description, icon }) {
+interface HobbyCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+function HobbyCard({ title, description, icon }: HobbyCardProps) {
   return (
     <motion.div
       className="relative w-[300px] h-[200px] bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg overflow-hidden transition-all duration-300 group hover:shadow-lg"
