@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { FaEnvelope, FaGithub } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState('/')
 
   const links = [
     { href: 'https://github.com/Davidcrz14', icon: FaGithub, label: 'GitHub' },
-    { href: '/contacto', icon: FaEnvelope, label: 'Contacto' }
+
 
 
   ]
