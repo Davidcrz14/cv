@@ -1,36 +1,49 @@
-import { motion } from 'framer-motion'
-import { FaEnvelope, FaExternalLinkAlt, FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
+import { motion } from 'framer-motion';
+import { FaEnvelope, FaExternalLinkAlt, FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
-import './App.css'
+import './App.css';
 
 // Asumimos que tienes un componente Navbar
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  github: string;
+  link: string;
+  number: string;
+}
 
+interface Hobby {
+  title: string;
+  description: string;
+  icon: string;
+}
 function App() {
 
-  const projects = [
+  const projects: Project[] = [
     { id: 1, title: 'Discord Bot', description: 'BotD es un bot de Discord diseñado para mejorar la experiencia del usuario en servidores de Discord mediante una serie de funcionalidades útiles y divertidas. Está construido utilizando la biblioteca discord.js, que es una poderosa herramienta para interactuar con la API de Discord.', github: 'https://github.com/Davidcrz14', link: 'https://github.com/Davidcrz14/botdiscord', number: '01' },
     { id: 2, title: 'DesuDenC', description: 'Este proyecto es una red social de estilo foro que permite a los usuarios interactuar y compartir contenido. Está diseñado para ofrecer una experiencia de usuario intuitiva y personalizada, con diversas características para gestionar perfiles y publicaciones.', github: 'https://github.com/Davidcrz14', link: 'https://github.com/Davidcrz14/Red-Social', number: '02' },
     { id: 3, title: 'FondV ', description: 'Programa para Windows, realizado con C# y Windows Form + .NET, que permite al usuario cambiar el fondo de su pantalla de una manera mas dinámica', github: 'https://github.com/Davidcrz14', link: 'https://github.com/Davidcrz14/FondoDv', number: '03' },
   ]
-const hobbies = [
-  {
-    title: "Dibujo",
-    description: "En mis ratos libres me gusta dibujar paisajes y personajes de mis animes favoritos. También he tomado clases de pintura al óleo.",
-    icon: "🎨"
-  },
-  {
-    title: "Videojuegos",
-    description: "Disfruto de jugar videojuegos como Call Of Duty, Minecraft, Valorant y Bloodstrike para divertirme y relajarme.",
-    icon: "🎮"
-  },
-  {
-    title: "Música",
-    description: "Soy apasionado por la música, especialmente la música clásica y la música europea. Algunos de mis artistas favoritos son Laufey, Mon Laferte y El Cuarteto de Nos.",
-    icon: "🎵"
-  }
-]
 
+  const hobbies: Hobby[] = [
+    {
+      title: "Dibujo",
+      description: "En mis ratos libres me gusta dibujar paisajes y personajes de mis animes favoritos. También he tomado clases de pintura al óleo.",
+      icon: "🎨"
+    },
+    {
+      title: "Videojuegos",
+      description: "Disfruto de jugar videojuegos como Call Of Duty, Minecraft, Valorant y Bloodstrike para divertirme y relajarme.",
+      icon: "🎮"
+    },
+    {
+      title: "Música",
+      description: "Soy apasionado por la música, especialmente la música clásica y la música europea. Algunos de mis artistas favoritos son Laufey, Mon Laferte y El Cuarteto de Nos.",
+      icon: "🎵"
+    }
+  ]
 
 
   return (
@@ -165,8 +178,11 @@ const hobbies = [
     </div>
   )
 }
-
-function InfoCard({ title, content }) {
+interface InfoCardProps {
+  title: string;
+  content: React.ReactNode;
+}
+function InfoCard({ title, content }: InfoCardProps) {
   return (
     <motion.div
       className="bg-blue-800 bg-opacity-30 p-6 rounded-lg shadow-lg h-full border border-blue-500 backdrop-blur-sm"
@@ -174,12 +190,12 @@ function InfoCard({ title, content }) {
       whileTap={{ scale: 0.95 }}
     >
       <h3 className="text-xl font-semibold mb-2 text-blue-300">{title}</h3>
-      <p className="text-gray-300">{content}</p>
+      <div className="text-gray-300">{content}</div>
     </motion.div>
   )
 }
 
-function Card({ title, description, github, link, number }) {
+function Card({ title, description, github, link, number }: Project) {
   return (
     <motion.div
       className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-blue-900 bg-opacity-50 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-blue-800 border border-blue-700 backdrop-blur-sm rounded-lg"
