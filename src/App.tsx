@@ -65,7 +65,7 @@ function App() {
           >
             <InfoCard
               title="Sobre mí"
-              content={`Mi nombre es David Cruz, tengo 18 años y vivo en Oaxaca de Juárez. Me gusta dibujar, leer, hacer deporte, y trabajar en equipo.`}
+              content={`Mi nombre es David Cruz, tengo 18 años y vivo en Oaxaca de Juárez. Me gusta dibujar, leer, hacer deporte, y trabajar en equipo. Actualmente estudio la Carrera de Ingenieria en Computación`}
             />
             <InfoCard
               title="Lenguajes y Tecnologías"
