@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FaEnvelope, FaExternalLinkAlt, FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import AnimatedText from './AnimatedText'; // Asegúrate de importar el nuevo componente
 
 
 // Asumimos que tienes un componente Navbar
@@ -51,14 +52,11 @@ function App() {
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-8">
         <section className="mb-16">
-          <motion.h1
-            className="text-5xl font-bold mb-8 text-center text-blue-300"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Bienvenido a mi Portafolio
-          </motion.h1>
+         <AnimatedText
+  initialText="DavC"
+  className="text-5xl font-bold mb-8 text-center text-blue-300"
+/>
+
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}

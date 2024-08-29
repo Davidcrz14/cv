@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700&display=swap");
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.animated-text {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  color: #00ffea;
+  background-color: rgba(42, 55, 177, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 20px rgba(44, 190, 216, 0.5);
+  overflow-wrap: break-word;
+  max-width: 80vw;
+}
+
+@media screen and (max-width: 768px) {
+  .animated-text {
+    font-size: 1.5rem;
+  }
+}
